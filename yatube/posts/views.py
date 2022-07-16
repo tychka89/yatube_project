@@ -1,10 +1,11 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse('Главная страница')
+    template = 'posts/index.html'
+    return render(request, template) 
 
 
-# В урл мы ждем парметр, и нужно его прередать в функцию для использования
-def group_posts(request, any_slug):
-    return HttpResponse(f'Любой слизняк {any_slug}')
+def group_posts(request):
+    template = 'posts/group_list.html'
+    return render(request, template)
